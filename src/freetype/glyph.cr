@@ -84,8 +84,7 @@ module Freetype
     #   FT_GLYPH_BBOX_PIXELS.
     def cbox(bbox_mode)
       bbox = Pointer(LibFreetype::FT_BBox).malloc
-      error = LibFreetype.FT_Glyph_Get_CBox(pointerof(@glyph), bbox_mode, bbox)
-      raise Error.new(error) if error > 0
+      LibFreetype.FT_Glyph_Get_CBox(@glyph, bbox_mode, bbox)
       BBox.new(bbox.value)
     end
 
