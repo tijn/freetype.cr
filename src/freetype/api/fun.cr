@@ -56,7 +56,7 @@ lib LibFreetype
   fun FT_Glyph_Copy(source : FT_Glyph, target : FT_Glyph*) : LibC::Int
   fun FT_Glyph_Transform(glyph : FT_Glyph, matrix : FT_Matrix*, delta : FT_Vector*) : LibC::Int
   fun FT_Glyph_Transform(glyph : FT_Glyph, matrix : FT_Matrix*, delta : FT_Vector*) : LibC::Int
-  fun FT_Glyph_Get_CBox(glyph : FT_Glyph) : Void
+  fun FT_Glyph_Get_CBox(glyph : FT_Glyph, bbox_mode : LibC::UInt, acbox : FT_BBox*) : Void
   fun FT_Glyph_Stroke(pglyph : FT_Glyph*, stroker : FT_Stroker, destroy : LibC::Char) : LibC::Int
   fun FT_Glyph_StrokeBorder(pglyph : FT_Glyph*, stroker : FT_Stroker, inside : LibC::Char, destroy : LibC::Char) : LibC::Int
   fun FT_Glyph_To_Bitmap(the_glyph : FT_Glyph*, render_mode : FT_Render_Mode, origin : FT_Vector*, destroy : LibC::Char) : LibC::Int
