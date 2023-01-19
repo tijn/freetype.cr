@@ -49,7 +49,7 @@ module Freetype
 
     # The pixel mode, i.e., how pixel bits are stored. See FT_Pixel_Mode for possible values.
     def pixel_mode
-      @bitmap.pixel_mode
+      LibFreetype::FT_Pixel_Mode.new(@bitmap.pixel_mode)
     end
 
     # This field is intended for paletted pixel modes; it indicates how the palette is stored.
